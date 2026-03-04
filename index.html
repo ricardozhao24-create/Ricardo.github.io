@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rich-Cardo 酒单 | Cocktail Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Rich-Cardo 酒单</h1>
+            <p class="subtitle">人类生来血液中的酒精浓度就缺少 0.05%</p>
+            <p class="slogan-en">He claims humans are born with a blood alcohol content that's 0.05% too low</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="search-section">
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="搜索鸡尾酒名称、基酒、风味或配料..."
+                        class="search-input"
+                    >
+                </div>
+                
+                <div class="filter-section">
+                    <div class="filter-group">
+                        <label class="filter-label">基酒类型：</label>
+                        <select id="baseFilter" class="filter-select">
+                            <option value="all">全部基酒</option>
+                            <option value="白朗姆酒">白朗姆酒</option>
+                            <option value="金酒">金酒</option>
+                            <option value="威士忌">威士忌</option>
+                            <option value="伏特加">伏特加</option>
+                            <option value="龙舌兰">龙舌兰</option>
+                            <option value="白兰地">白兰地</option>
+                            <option value="香槟">香槟</option>
+                            <option value="朗姆酒">朗姆酒</option>
+                            <option value="混合基酒">混合基酒</option>
+                            <option value="利口酒">利口酒</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">风味标签：</label>
+                        <select id="tagFilter" class="filter-select">
+                            <option value="all">全部风味</option>
+                            <option value="经典">经典</option>
+                            <option value="清爽">清爽</option>
+                            <option value="甜美">甜美</option>
+                            <option value="醇厚">醇厚</option>
+                            <option value="酸甜">酸甜</option>
+                            <option value="浓烈">浓烈</option>
+                            <option value="优雅">优雅</option>
+                            <option value="果香">果香</option>
+                            <option value="气泡">气泡</option>
+                            <option value="热带">热带</option>
+                            <option value="咖啡">咖啡</option>
+                            <option value="薄荷">薄荷</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <div class="results-header">
+                    <h2 class="results-title">全部鸡尾酒</h2>
+                    <span class="results-count" id="resultsCount">共 35 款</span>
+                </div>
+                
+                <div class="cocktails-grid" id="cocktailsGrid">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="modal" id="cocktailModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <p class="modal-name-en" id="modalNameEn"></p>
+                    <div class="modal-tags" id="modalTags"></div>
+                </div>
+                
+                <div class="modal-info">
+                    <div class="info-row">
+                        <span class="info-label">基酒：</span>
+                        <span class="info-value" id="modalBase"></span>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="section-title">📋 配料</h3>
+                    <div class="ingredients-text" id="modalIngredients"></div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="section-title">🥄 做法</h3>
+                    <div class="steps-text" id="modalSteps"></div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="section-title">✨ 风味</h3>
+                    <div class="flavor-text" id="modalFlavor"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 鸡尾酒配方库 | 仅供学习参考，请理性饮酒</p>
+        </div>
+    </footer>
+
+    <script src="cocktails-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
